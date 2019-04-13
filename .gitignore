@@ -2,7 +2,16 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+import requests
+from lxml import etree
+import webbrowser as web
+jx_url='https://jx.daheiyun.com/?url=https://www.iqiyi.com/v_19rrifwj07.html'
+header = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'}
+res = requests.get(jx_url,headers=header)
+response = res.content.decode()
+print(response)
+a = response.find('https://www.iqiyi.com/v_19rrifwj07.html')
+print(a)
 # C extensions
 *.so
 
